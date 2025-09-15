@@ -45,6 +45,8 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+   position: relative; /* add this */
+  z-index: 100;
 }
 
 .logo{
@@ -575,6 +577,7 @@ footer{
   flex-direction: column; /* stack 3 lines vertically */
   gap: 5px; /* space between lines */
   cursor: pointer; /* pointer on hover */
+   
 }
 
 /* Each Line of the Hamburger */
@@ -611,8 +614,8 @@ footer{
     display: none; /* hide links by default on mobile */
     flex-direction: column; /* stack links vertically */
     position: absolute; /* position menu over content */
-    top: 70px; /* below header */
-    right: 24px; /* align to right */
+    top: 100%; /* right below header */
+    right: 0;
     background: var(--bg); /* dark background */
     padding: 20px; /* spacing inside menu */
     border-radius: 8px; /* rounded corners */
