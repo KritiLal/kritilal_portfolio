@@ -38,7 +38,7 @@ function About() {
 
       {/* Resume Download Button */}
       <div className="resume-btn">
-        <a href="/Kriti-Lal--Resume1.pdf" download>
+        <a href="/KritiLal_Resume.pdf" download>
           Download Resume
         </a>
       </div>
