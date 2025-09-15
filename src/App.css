@@ -567,3 +567,73 @@ footer{
     font-size: 16px; /* easier to read on narrow screens */
   }
 }
+
+
+/* Hamburger Icon Container */
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column; /* stack 3 lines vertically */
+  gap: 5px; /* space between lines */
+  cursor: pointer; /* pointer on hover */
+}
+
+/* Each Line of the Hamburger */
+.hamburger span {
+  width: 25px; /* line width */
+  height: 3px; /* line thickness */
+  background: var(--accent); /* red accent color */
+  border-radius: 2px; /* slightly rounded edges */
+  transition: all 0.3s ease; /* smooth animation for rotation */
+}
+
+/* Hamburger "X" Animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* top line rotates to form X */
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* hide middle line */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px); /* bottom line rotates to form X */
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+  display: flex; /* horizontal row of links */
+  gap: 24px; /* space between links */
+}
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+  .nav-links {
+    display: none; /* hide links by default on mobile */
+    flex-direction: column; /* stack links vertically */
+    position: absolute; /* position menu over content */
+    top: 70px; /* below header */
+    right: 24px; /* align to right */
+    background: var(--bg); /* dark background */
+    padding: 20px; /* spacing inside menu */
+    border-radius: 8px; /* rounded corners */
+    gap: 16px; /* space between links */
+    border: 1px solid rgba(255,255,255,0.1); /* subtle border */
+    z-index: 1000; /* appear above other elements */
+  }
+
+  /* Show menu when hamburger is active */
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* Show Hamburger Icon on Mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile link styles */
+  .nav-links a {
+    font-size: 18px; /* larger text for touch */
+    padding: 8px 12px; /* padding for easier tapping */
+  }
+}
