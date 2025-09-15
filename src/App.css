@@ -73,6 +73,8 @@ nav{
   margin-top:0;
   display:flex;
   gap:24px;
+  flex-wrap: wrap; 
+  justify-content: center; 
 }
 
 nav a{
@@ -162,6 +164,13 @@ button:hover{
   cursor:pointer;
   position:relative;
   overflow:hidden;
+}
+
+.projects .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
 }
 
 .project::after{
@@ -327,14 +336,14 @@ footer{
 
 .skills .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns for 2x2 layout */
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
   margin-top: 30px;
 }
 
 @media (max-width: 700px) {
-  .skills .grid {
-    grid-template-columns: 1fr; /* stack into 1 column on small screens */
+  .skills .grid { 
+    grid-template-columns: 1fr; /* stack into 1 column */
   }
 }
 
@@ -411,14 +420,21 @@ footer{
 
 .certifications .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 1 row, 3 columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin-top: 30px;
 }
 
+
 @media (max-width: 900px) {
   .certifications .grid {
-    grid-template-columns: 1fr; /* stack into 1 column on smaller screens */
+    grid-template-columns: 1fr; /* stack into 1 column */
+  }
+}
+
+@media (max-width: 500px) {
+  nav {
+    gap: 16px; /* reduce gap on very small screens */
   }
 }
 
@@ -535,4 +551,19 @@ footer{
 @keyframes fadeInOut {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
+}
+
+/* Responsive font sizes */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 36px; /* smaller for mobile */
+  }
+
+  h2 {
+    font-size: 28px; /* smaller for mobile */
+  }
+
+  p.lead {
+    font-size: 16px; /* easier to read on narrow screens */
+  }
 }
