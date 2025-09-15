@@ -1,7 +1,7 @@
 :root{
   --bg:#000000;
-  --accent:#c1071e;
-  --muted:#e57373;
+ --accent: #1E90FF; /* Dodger Blue instead of #c1071e */
+  --muted: #87CEFA;
   --radius:14px;
   --max-width:1100px;
   color-scheme: dark;
